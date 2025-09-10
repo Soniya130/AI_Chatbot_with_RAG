@@ -1,18 +1,16 @@
-# config/config.py
-from pathlib import Path
 import os
-from dotenv import load_dotenv
+from pathlib import Path
 
+# Only needed locally, ignore on Streamlit Cloud
+try:
+    from dotenv import load_dotenv
+    ROOT = Path(__file__).resolve().parent.parent
+    dotenv_path = ROOT / ".env"
+    if dotenv_path.exists():
+        load_dotenv(str(dotenv_path))
+except ModuleNotFoundError:
+    pass  # skip dotenv if not installed in cloud
 
-# Project root (assumes config/ is directly under project root)
-ROOT = Path(__file__).resolve().parent.parent
-
-# Load .env from project root if available (development convenience only)
-dotenv_path = ROOT / ".env"
-if dotenv_path.exists():
-    load_dotenv(str(dotenv_path))
-
-# Read API keys from environment variables
 
 
   # e.g., for the web search tool
