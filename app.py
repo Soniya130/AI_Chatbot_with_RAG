@@ -3,8 +3,7 @@ warnings.filterwarnings("ignore", category=UserWarning, module="langchain_core.g
 
 import streamlit as st
 import os
-from langchain.globals import set_verbose
-set_verbose(False)
+
 
 from models.llm import get_chat_model
 from utils.websearch_utils import web_search
