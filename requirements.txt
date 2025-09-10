@@ -1,0 +1,9 @@
+streamlit
+langchain>=0.2.0
+langchain-community>=0.2.0
+git+https://github.com/langchain-ai/langchain-groq.git
+sentence-transformers
+faiss-cpu
+python-dotenv
+requests
+tqdm
