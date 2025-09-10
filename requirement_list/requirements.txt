@@ -5,3 +5,5 @@ langchain-groq
 sentence-transformers
 faiss-cpu
 python-dotenv
+requests
+tqdm
