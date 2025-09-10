@@ -15,13 +15,13 @@ if dotenv_path.exists():
 # Read API keys from environment variables
 
 
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")
+  # e.g., for the web search tool
 GROQ_API_KEY = os.getenv("GROQ_API_KEY", "")
+OPENAI_API_KEY = os.getenv("OPENAI_API_KEY", "")
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
-WEBSEARCH_API_KEY = os.getenv("WEBSEARCH_API_KEY", "")  # e.g., for the web search tool
+WEBSEARCH_API_KEY = os.getenv("WEBSEARCH_API_KEY", "")
 
 def require_key(env_name: str) -> str:
-    """Return env var value or raise a clear error (useful at start-up)."""
     val = os.getenv(env_name)
     if not val:
         raise EnvironmentError(f"Missing required environment variable: {env_name}")
